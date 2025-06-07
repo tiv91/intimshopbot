@@ -2,7 +2,7 @@ import os
 import gspread
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, ContextTypes, filters
 from oauth2client.service_account import ServiceAccountCredentials
 
 # --- Налаштування ---
@@ -10,9 +10,9 @@ TOKEN = os.getenv("TOKEN")
 TABLE_NAME = 'СЕКС ШОП ТОВАРИ'
 CREDENTIALS_FILE = os.getenv("CREDENTIALS_FILE", "xsebot-37780ea5328e.json")
 ORDER_SHEET_NAME = 'ЗАМОВЛЕННЯ'
-ADMIN_ID = 7779301550  # Телеграм ID адміністратора
+ADMIN_ID = 7779301550
 
-user_cart = {}  # Словник кошиків користувачів
+user_cart = {}
 
 # --- Google Sheets ---
 def get_gsheet_client():
@@ -129,7 +129,11 @@ def main():
     app.add_handler(CallbackQueryHandler(handle_filter, pattern="^filter:"))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     print("✅ Бот запущено")
-    app.run_polling()
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=int(os.environ.get("PORT", 8080)),
+        webhook_url=os.environ.get("https://intimshopbot.onrender.com")
+    )
 
 if __name__ == '__main__':
     main()
