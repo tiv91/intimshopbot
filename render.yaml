@@ -2,6 +2,13 @@ services:
   - type: web
     name: intimshopbot
     env: python
+    plan: free
     buildCommand: ""
-    startCommand: python bot.py
-    autoDeploy: true
+    startCommand: "python bot.py"
+    envVars:
+      - key: TOKEN
+        value: "7620051927:AAHKKXSmoseJNWSEJfJ4vZ3Q1WiDHdn7U80н"
+      - key: CREDENTIALS_FILE
+        value: "xsebot-37780ea5328e.json"
+      - key: WEBHOOK_URL
+        value: "https://https://intimshopbot.onrender.com"
