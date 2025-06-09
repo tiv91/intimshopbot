@@ -11,4 +11,4 @@ services:
       - key: CREDENTIALS_FILE
         value: "xsebot-37780ea5328e.json"
       - key: WEBHOOK_URL
-        value: "https://https://intimshopbot.onrender.com"
+        value: "https://intimshopbot.onrender.com"
