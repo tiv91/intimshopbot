@@ -43,7 +43,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     filters_row = [
         InlineKeyboardButton("💸 До 300 грн", callback_data="filter:0:300"),
         InlineKeyboardButton("💰 300–600 грн", callback_data="filter:300:600"),
-        InlineKeyboardButton("💎 Понад 600 грн", callback_data="filter:600:10000")
+        InlineKeyboardButton("💱 Понад 600 грн", callback_data="filter:600:10000")
     ]
     markup = InlineKeyboardMarkup(buttons + [filters_row] + [[InlineKeyboardButton("🛒 Кошик", callback_data="view_cart")]])
     await update.message.reply_text("Оберіть категорію товарів або фільтр за ціною:", reply_markup=markup)
@@ -129,11 +129,7 @@ def main():
     app.add_handler(CallbackQueryHandler(handle_filter, pattern="^filter:"))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     print("✅ Бот запущено")
-    app.run_webhook(
-        listen="0.0.0.0",
-        port=int(os.environ.get("PORT", 8080)),
-        webhook_url=os.environ.get("https://intimshopbot.onrender.com")
-    )
+    app.run_polling()
 
 if __name__ == '__main__':
     main()
