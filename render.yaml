@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: worker
     name: intimshopbot
     env: python
     plan: free
@@ -10,5 +10,3 @@ services:
         value: "7620051927:AAHKKXSmoseJNWSEJfJ4vZ3Q1WiDHdn7U80н"
       - key: CREDENTIALS_FILE
         value: "xsebot-a21641ac586e.json"
-      - key: WEBHOOK_URL
-        value: "https://intimshopbot.onrender.com"
