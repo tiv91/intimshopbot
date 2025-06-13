@@ -8,7 +8,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 # --- Налаштування ---
 TOKEN = os.getenv("TOKEN")
 TABLE_NAME = 'СЕКС ШОП ТОВАРИ'
-CREDENTIALS_FILE = os.getenv("CREDENTIALS_FILE", "xsebot-37780ea5328e.json")
+CREDENTIALS_FILE = os.getenv("CREDENTIALS_FILE", "xsebot-a21641ac586e.json")
 ORDER_SHEET_NAME = 'ЗАМОВЛЕННЯ'
 ADMIN_ID = 7779301550
 
