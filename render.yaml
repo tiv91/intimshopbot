@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services:
   - type: worker
     name: intimshopbot
@@ -12,3 +13,17 @@ services:
         value: "xsebot-37780ea5328e.json"
       - key: WEBHOOK_URL
         value: "https://intimshopbot.onrender.com"
+=======
+services:
+  - type: worker
+    name: intimshopbot
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python bot.py"
+    envVars:
+      - key: TOKEN
+        value: "7620051927:AAHKKXSmoseJNWSEJfJ4vZ3Q1WiDHdn7U80н"
+      - key: CREDENTIALS_FILE
+        value: "xsebot-a21641ac586e.json"
+>>>>>>> fd1151bea402af1f2df9bf54c1a01a429236d11b

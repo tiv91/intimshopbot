@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 python-telegram-bot[webhooks]==20.0
 gspread
 oauth2client
@@ -7,3 +8,8 @@ python-telegram-bot==20.0
 gspread
 oauth2client
 >>>>>>> 423e2936957d33524413dfbc4fe36f775b9ba75d
+=======
+python-telegram-bot[webhooks]==20.0
+gspread
+oauth2client
+>>>>>>> fd1151bea402af1f2df9bf54c1a01a429236d11b
